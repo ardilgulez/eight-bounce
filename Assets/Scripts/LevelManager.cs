@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public Text text;
 
     public float spawnInterval = 1f;
     public float difficultyInterval = 5f;
@@ -51,7 +46,6 @@ public class LevelManager : MonoBehaviour
     private void UpdateScore()
     {
         GameManager.instance.score += Time.deltaTime;
-        text.text = string.Format("{0:N1}", GameManager.instance.score);
     }
 
     private void UpdateDifficulty()
@@ -70,7 +64,7 @@ public class LevelManager : MonoBehaviour
         if (spawnTimer >= spawnInterval)
         {
             spawnTimer = 0;
-            float xVal = UnityEngine.Random.Range(-1.5f, 1.5f);
+            float xVal = Random.Range(-1.5f, 1.5f);
             GameObject enemy = Instantiate(enemyPrefab, new Vector3(xVal, spawnHeight, 0), Quaternion.identity);
             enemy.transform.parent = gameObject.transform.parent;
         }

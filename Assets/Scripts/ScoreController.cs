@@ -20,6 +20,7 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!GameManager.instance.isFinished)
+            textElement.text = string.Format("{0:N1}", GameManager.instance.score);
     }
 }

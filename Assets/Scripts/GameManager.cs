@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool musicEnabled = true;
-    public bool sfxEnabled = true;
+    [HideInInspector] public bool musicEnabled = true;
+    [HideInInspector] public bool sfxEnabled = true;
 
-    [HideInInspector]
-    public bool isPaused = false;
-    public float score = 0f;
+    [HideInInspector] public bool isPaused = false, isFinished = false;
+    [HideInInspector] public float score = 0f;
 
     // Start is called before the first frame update
     private void Awake()
@@ -31,12 +30,24 @@ public class GameManager : MonoBehaviour
     {
         SoundToggleController.Toggle += OnSoundToggle;
         LevelManager.PauseResume += UpdateTimeScale;
+        BallMovement.Death += HandleDeath;
+        PlayButtonController.Click += StartPlay;
+        MenuButtonController.Click += NavigateToMainMenu;
     }
 
     private void OnDisable()
     {
         SoundToggleController.Toggle -= OnSoundToggle;
         LevelManager.PauseResume -= UpdateTimeScale;
+        BallMovement.Death -= HandleDeath;
+        PlayButtonController.Click -= StartPlay;
+        MenuButtonController.Click -= NavigateToMainMenu;
+    }
+
+    private void HandleDeath()
+    {
+        isFinished = true;
+        Time.timeScale = 0f;
     }
 
     public void OnSoundToggle(SoundType type, bool enabled)
@@ -45,17 +56,15 @@ public class GameManager : MonoBehaviour
         sfxEnabled = type == SoundType.SFX ? enabled : sfxEnabled;
     }
 
-    public void OnPlayButtonClicked()
+    public void StartPlay()
     {
+        isFinished = false;
+        Time.timeScale = 1.0f;
+        score = 0;
         SceneManager.LoadScene("Gameplay");
     }
 
-    public void OnRestartButtonClicked()
-    {
-        SceneManager.LoadScene("Gameplay");
-    }
-
-    public void OnMainMenuButtonClicked()
+    public void NavigateToMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
     }

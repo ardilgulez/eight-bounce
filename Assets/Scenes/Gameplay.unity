@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 115105293}
   - component: {fileID: 115105295}
   - component: {fileID: 115105294}
+  - component: {fileID: 115105296}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -462,6 +463,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115105292}
   m_CullTransparentMesh: 1
+--- !u!114 &115105296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115105292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2349174d3f0415ea32cf5d13e64862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &116196553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,7 +580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2843957199336265124, guid: fb1a0ba8bb99440f188cf11de8aab42e, type: 3}
-  text: {fileID: 115105294}
   spawnInterval: 1
   difficultyInterval: 5
   difficultyModifier: 0.05
@@ -691,17 +703,6 @@ Transform:
   m_Father: {fileID: 70533863}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901556890 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8241272770557841604, guid: d61d82179088640b595127be75fea90c, type: 3}
-  m_PrefabInstance: {fileID: 1355349680}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bbc147c184b64bf2abf450c564e31e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &916395474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,7 @@ GameObject:
   - component: {fileID: 1930525412}
   - component: {fileID: 1930525411}
   - component: {fileID: 1930525410}
+  - component: {fileID: 1930525413}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1454,9 +1456,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901556890}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnMainMenuButtonClicked
+      - m_Target: {fileID: 1930525413}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: OnMenuButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1504,6 +1506,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930525408}
   m_CullTransparentMesh: 1
+--- !u!114 &1930525413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930525408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106e3dbf694f34b999dee3bf6a9f7527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2026550563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1530,7 @@ GameObject:
   - component: {fileID: 2026550567}
   - component: {fileID: 2026550566}
   - component: {fileID: 2026550565}
+  - component: {fileID: 2026550568}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1586,9 +1601,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901556890}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnRestartButtonClicked
+      - m_Target: {fileID: 2026550568}
+        m_TargetAssemblyTypeName: PlayButtonController, Assembly-CSharp
+        m_MethodName: OnPlayButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1636,6 +1651,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026550563}
   m_CullTransparentMesh: 1
+--- !u!114 &2026550568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026550563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d521210e4c24dfd9bc51b74e83213a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2489847294433016765
 PrefabInstance:
   m_ObjectHideFlags: 0
