@@ -11,6 +11,9 @@ public class BallMovement : MonoBehaviour
     private string WALL_TAG = "Wall";
     private string ENEMY_TAG = "Enemy";
 
+    public delegate void DeathEvent();
+    public static event DeathEvent Death;
+
     public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,7 @@ public class BallMovement : MonoBehaviour
         } else if (collision.gameObject.CompareTag(ENEMY_TAG))
         {
             Destroy(gameObject);
+            Death();
         }
     }
 

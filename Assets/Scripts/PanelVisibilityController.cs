@@ -5,16 +5,18 @@ using UnityEngine;
 public class PanelVisibilityController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject pausePanel, inGamePanel, gameplayElements;
+    public GameObject pausePanel, inGamePanel, gameplayElements, endGamePanel;
 
     private void OnEnable()
     {
         LevelManager.PauseResume += TogglePanelVisibility;
+        BallMovement.Death += HandlePlayerDeath;
     }
 
     private void OnDisable()
     {
         LevelManager.PauseResume -= TogglePanelVisibility;
+        BallMovement.Death -= HandlePlayerDeath;
     }
 
     private void TogglePanelVisibility()
@@ -22,5 +24,13 @@ public class PanelVisibilityController : MonoBehaviour
         pausePanel.SetActive(GameManager.instance.isPaused);
         inGamePanel.SetActive(!GameManager.instance.isPaused);
         gameplayElements.SetActive(!GameManager.instance.isPaused);
+    }
+
+    private void HandlePlayerDeath()
+    {
+        pausePanel.SetActive(false);
+        inGamePanel.SetActive(false);
+        gameplayElements.SetActive(false);
+        endGamePanel.SetActive(true);
     }
 }

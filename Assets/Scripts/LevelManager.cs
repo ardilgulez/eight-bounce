@@ -16,8 +16,6 @@ public class LevelManager : MonoBehaviour
     private float spawnTimer = 0f;
     private float spawnHeight = -2f;
 
-    private float score = 0f;
-
     public delegate void PauseToggle();
     public static event PauseToggle PauseResume;
 
@@ -52,8 +50,8 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateScore()
     {
-        score += Time.deltaTime;
-        text.text = string.Format("{0:N1}", score);
+        GameManager.instance.score += Time.deltaTime;
+        text.text = string.Format("{0:N1}", GameManager.instance.score);
     }
 
     private void UpdateDifficulty()

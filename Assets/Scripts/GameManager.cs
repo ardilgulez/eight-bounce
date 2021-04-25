@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public bool isPaused = false;
+    public float score = 0f;
 
     // Start is called before the first frame update
     private void Awake()
@@ -46,6 +48,16 @@ public class GameManager : MonoBehaviour
     public void OnPlayButtonClicked()
     {
         SceneManager.LoadScene("Gameplay");
+    }
+
+    public void OnRestartButtonClicked()
+    {
+        SceneManager.LoadScene("Gameplay");
+    }
+
+    public void OnMainMenuButtonClicked()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
     private void UpdateTimeScale()
