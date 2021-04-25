@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
         sfxEnabled = type == SoundType.SFX ? enabled : sfxEnabled;
     }
 
+    public bool GetSoundEnabled(SoundType soundType)
+    {
+        return soundType == SoundType.Music ? musicEnabled : sfxEnabled;
+    }
+
     public void StartPlay()
     {
         isFinished = false;
