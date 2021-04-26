@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     public void StartPlay()
     {
         isFinished = false;
+        isPaused = false;
         Time.timeScale = 1.0f;
         score = 0;
         SceneManager.LoadScene("Gameplay");
