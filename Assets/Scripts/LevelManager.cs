@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour
         if (spawnTimer >= spawnInterval)
         {
             spawnTimer = 0;
-            float xVal = Random.Range(-1.5f, 1.5f);
+            float xVal = Random.Range(-1.4f, 1.4f);
             GameObject enemy = Instantiate(enemyPrefab, new Vector3(xVal, spawnHeight, 0), Quaternion.identity);
             enemy.transform.parent = gameObject.transform.parent;
         }
