@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         SoundToggleController.Toggle += OnSoundToggle;
         LevelManager.PauseResume += UpdateTimeScale;
-        BallMovement.Death += HandleDeath;
+        ExplosionController.ExplosionFinished += HandleDeath;
         PlayButtonController.Click += StartPlay;
         MenuButtonController.Click += NavigateToMainMenu;
     }
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         SoundToggleController.Toggle -= OnSoundToggle;
         LevelManager.PauseResume -= UpdateTimeScale;
-        BallMovement.Death -= HandleDeath;
+        ExplosionController.ExplosionFinished -= HandleDeath;
         PlayButtonController.Click -= StartPlay;
         MenuButtonController.Click -= NavigateToMainMenu;
     }

@@ -2869,10 +2869,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike
       objectReference: {fileID: 0}
-    - target: {fileID: 2843957199336265126, guid: fb1a0ba8bb99440f188cf11de8aab42e, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1a0ba8bb99440f188cf11de8aab42e, type: 3}
 --- !u!1001 &4133774022221210935
@@ -2944,10 +2940,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 38574114}
     m_Modifications:
-    - target: {fileID: 7138895034369125148, guid: d9a79991687cf4854b497550432a95d3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7632000648559857970, guid: d9a79991687cf4854b497550432a95d3, type: 3}
       propertyPath: m_RootOrder
       value: 0

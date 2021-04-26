@@ -10,13 +10,13 @@ public class PanelVisibilityController : MonoBehaviour
     private void OnEnable()
     {
         LevelManager.PauseResume += TogglePanelVisibility;
-        BallMovement.Death += HandlePlayerDeath;
+        ExplosionController.ExplosionFinished += HandlePlayerDeath;
     }
 
     private void OnDisable()
     {
         LevelManager.PauseResume -= TogglePanelVisibility;
-        BallMovement.Death -= HandlePlayerDeath;
+        ExplosionController.ExplosionFinished -= HandlePlayerDeath;
     }
 
     private void TogglePanelVisibility()

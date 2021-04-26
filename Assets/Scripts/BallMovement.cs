@@ -11,10 +11,10 @@ public class BallMovement : MonoBehaviour
     private string WALL_TAG = "Wall";
     private string ENEMY_TAG = "Enemy";
 
-    public delegate void DeathEvent();
-    public static event DeathEvent Death;
+    public GameObject explosion;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +35,8 @@ public class BallMovement : MonoBehaviour
             ReverseDirection();
         } else if (collision.gameObject.CompareTag(ENEMY_TAG))
         {
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            Death();
         }
     }
 
