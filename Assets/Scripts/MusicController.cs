@@ -12,6 +12,6 @@ public class MusicController : MonoBehaviour
 
     void Update()
     {
-        audioSource.volume = GameManager.instance.musicEnabled ? 1f : 0f;
+        audioSource.volume = GameManager.instance.musicEnabled ? 0.25f : 0f;
     }
 }
