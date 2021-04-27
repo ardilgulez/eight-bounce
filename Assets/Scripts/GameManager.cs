@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         ExplosionController.ExplosionFinished += HandleDeath;
         PlayButtonController.Click += StartPlay;
         MenuButtonController.Click += NavigateToMainMenu;
+        Scorable.Score += UpdateScore;
     }
 
     private void OnDisable()
@@ -42,6 +43,12 @@ public class GameManager : MonoBehaviour
         ExplosionController.ExplosionFinished -= HandleDeath;
         PlayButtonController.Click -= StartPlay;
         MenuButtonController.Click -= NavigateToMainMenu;
+        Scorable.Score -= UpdateScore;
+    }
+
+    private void UpdateScore(float _score)
+    {
+        score += _score;
     }
 
     private void HandleDeath()

@@ -15,6 +15,9 @@ public class BallMovement : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public delegate void DeathEvent();
+    public static event DeathEvent Death;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,7 @@ public class BallMovement : MonoBehaviour
             ReverseDirection();
         } else if (collision.gameObject.CompareTag(ENEMY_TAG))
         {
+            Death();
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

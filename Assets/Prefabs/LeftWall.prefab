@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4133774022221210938}
   - component: {fileID: 4133774022221210939}
   - component: {fileID: 6216396594484718830}
-  - component: {fileID: 8380074577981783588}
+  - component: {fileID: 195202351}
   m_Layer: 0
   m_Name: LeftWall
   m_TagString: Wall
@@ -229,7 +229,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8380074577981783588
+--- !u!114 &195202351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8546763373177652823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 486a543b2c6f8472390e3986a391b953, type: 3}
+  m_Script: {fileID: 11500000, guid: 885fa552455d74590b0ef4637624c94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionScore: 50

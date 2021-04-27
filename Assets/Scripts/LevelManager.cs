@@ -24,7 +24,6 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         HandlePause();
-        UpdateScore();
         UpdateDifficulty();
         HandleSpawn();
     }
@@ -41,11 +40,6 @@ public class LevelManager : MonoBehaviour
     public void OnClickResumeButton()
     {
         PauseResume();
-    }
-
-    private void UpdateScore()
-    {
-        GameManager.instance.score += Time.deltaTime;
     }
 
     private void UpdateDifficulty()

@@ -14,7 +14,7 @@ public class SoundToggleController : MonoBehaviour
 
     private void Awake()
     {
-        toggle = gameObject.GetComponent<Toggle>();
+        toggle = GetComponent<Toggle>();
     }
 
     private void OnEnable()
